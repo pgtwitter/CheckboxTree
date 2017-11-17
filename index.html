@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="./checkboxTree.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('#tree input').checkboxTree({
+				afterChange: function(cb) {
+					var msg = '';
+					$.each($('input[type="checkbox"]'), function(i, o) {
+						if ($(o).prop('checked') == true)
+							msg += ($(o).parent().text().split(/\s/))[0] + '\n'
+					});
+					console.log(msg + '---');
+				},
+				indeterminateState: false,
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div>
+		<ul id="tree">
+			<li><input type="checkbox">A
+				<ul>
+					<li><input type="checkbox">A-a
+						<ul>
+							<li><input type="checkbox">A-a-1
+								<ul>
+									<li><input type="checkbox">A-a-11</li>
+									<li><input type="checkbox">A-a-12</li>
+									<li><input type="checkbox">A-a-13</li>
+									<li><input type="checkbox">A-a-14</li>
+								</ul>
+							</li>
+							<li><input type="checkbox">A-a-2
+								<ul>
+									<li><input type="checkbox">A-a-21</li>
+									<li><input type="checkbox">A-a-22</li>
+									<li><input type="checkbox">A-a-23</li>
+									<li><input type="checkbox">A-a-24</li>
+								</ul>
+							</li>
+							<li><input type="checkbox">A-a-3
+								<ul>
+									<li><input type="checkbox">A-a-31</li>
+									<li><input type="checkbox">A-a-32</li>
+									<li><input type="checkbox">A-a-33</li>
+									<li><input type="checkbox">A-a-34</li>
+								</ul>
+							</li>
+							<li><input type="checkbox">A-a-4
+								<ul>
+									<li><input type="checkbox">A-a-41</li>
+									<li><input type="checkbox">A-a-42</li>
+									<li><input type="checkbox">A-a-43</li>
+									<li><input type="checkbox">A-a-44</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><input type="checkbox">A-b
+						<ul>
+							<li><input type="checkbox">A-b-1</li>
+							<li><input type="checkbox">A-b-2</li>
+							<li><input type="checkbox">A-b-3</li>
+							<li><input type="checkbox">A-b-4</li>
+						</ul>
+					</li>
+					<li><input type="checkbox">A-c
+						<ul>
+							<li><input type="checkbox">A-c-1</li>
+							<li><input type="checkbox">A-c-2</li>
+							<li><input type="checkbox">A-c-3</li>
+							<li><input type="checkbox">A-c-4</li>
+						</ul>
+					</li>
+					<li><input type="checkbox">A-d
+						<ul>
+							<li><input type="checkbox">A-d-1</li>
+							<li><input type="checkbox">A-d-2</li>
+							<li><input type="checkbox">A-d-3</li>
+							<li><input type="checkbox">A-d-4</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><input type="checkbox">B
+				<ul>
+					<li><input type="checkbox">B-a
+						<ul>
+							<li><input type="checkbox">B-a-1</li>
+							<li><input type="checkbox">B-a-2</li>
+							<li><input type="checkbox">B-a-3</li>
+							<li><input type="checkbox">B-a-4</li>
+						</ul>
+					</li>
+					<li><input type="checkbox">B-b
+						<ul>
+							<li><input type="checkbox">B-b-1</li>
+							<li><input type="checkbox">B-b-2</li>
+							<li><input type="checkbox">B-b-3</li>
+							<li><input type="checkbox">B-b-4</li>
+						</ul>
+					</li>
+					<li><input type="checkbox">B-c
+						<ul>
+							<li><input type="checkbox">B-c-1</li>
+							<li><input type="checkbox">B-c-2</li>
+							<li><input type="checkbox">B-c-3</li>
+							<li><input type="checkbox">B-c-4</li>
+						</ul>
+					</li>
+					<li><input type="checkbox">B-d
+						<ul>
+							<li><input type="checkbox">B-d-1</li>
+							<li><input type="checkbox">B-d-2</li>
+							<li><input type="checkbox">B-d-3</li>
+							<li><input type="checkbox">B-d-4</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+</body>
+
+</html>
